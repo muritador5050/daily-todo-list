@@ -18,11 +18,14 @@ function renderTasks() {
             <span style='text-decoration:${
               task.completed ? 'line-through' : 'none'
             }'>${task.title}</span>
+             <div>
              <button onclick='editTask(${task.id})'>edit</button>
              <button onclick='deleteTask(${task.id})'>delete</button>
               <button style='cursor:${
                 task.completed ? 'not-allowed' : 'pointer'
               }' onclick='toggleCompletion(${task.id})' >Completed</button>
+             </div>
+              
         `;
     taskList.appendChild(li);
   });
@@ -86,4 +89,4 @@ function toggleCompletion(taskId) {
   }
 }
 
-renderTasks();
+window.onload = renderTasks();
